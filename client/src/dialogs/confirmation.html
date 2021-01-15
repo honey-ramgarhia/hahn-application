@@ -1,0 +1,13 @@
+<template>
+    <ux-dialog>
+        <ux-dialog-body>
+          <h2>Confirm</h2>
+          <p>Are you sure you want to perform this action?</p>
+        </ux-dialog-body>
+    
+        <ux-dialog-footer>
+          <button click.trigger="controller.cancel()">Cancel</button>
+          <button click.trigger="controller.ok()">Ok</button>
+        </ux-dialog-footer>
+      </ux-dialog>
+</template>

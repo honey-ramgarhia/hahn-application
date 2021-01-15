@@ -1,0 +1,14 @@
+{
+    "form": {
+        "title": "Applicant Form",
+        "name": "Name",
+        "familyName": "Family Name",
+        "address": "Address",
+        "country": "Country",
+        "eMailAddress": "E-Mail Address",
+        "age": "Age",
+        "isHired": "Hired?",
+        "submit": "Submit",
+        "reset": "Reset"
+    }
+}

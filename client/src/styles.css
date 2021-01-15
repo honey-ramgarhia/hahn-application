@@ -1,0 +1,25 @@
+.content {
+    max-width: 375px;
+    margin: auto;
+}
+
+.app-dialog-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background-color: #000;
+    opacity: 0.2;
+}
+
+.app-dialog {
+    width: 320px;
+    background-color: #111;
+}

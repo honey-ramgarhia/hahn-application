@@ -1,0 +1,65 @@
+<template>
+    <div class="content">
+        <h1 class="mb-3" t="form.title"></h1>
+
+        <form submit.trigger="onSubmit()" with.bind="formData" class="border rounded p-3 d-flex flex-column">
+            <div class="mb-2" validation-errors.bind="nameErrors">
+                <label t="form.name"></label>
+                <input type="text" value.bind="name & validate" class="form-control" class.bind="nameErrors.length ? 'border-danger' : ''"/>
+                <span repeat.for="errorInfo of nameErrors" class="form-text text-danger">
+                    ${errorInfo.error.message}
+                </span>
+            </div>
+
+            <div class="mb-2" validation-errors.bind="familyNameErrors">
+                <label t="form.familyName"></label>
+                <input type="text" value.bind="familyName & validate" class="form-control" class.bind="familyNameErrors.length ? 'border-danger' : ''"/>
+                <span repeat.for="errorInfo of familyNameErrors" class="form-text text-danger">
+                    ${errorInfo.error.message}
+                </span>
+            </div>
+
+            <div class="mb-2" validation-errors.bind="addressErrors">
+                <label t="form.address"></label>
+                <input type="text" value.bind="address & validate" class="form-control" class.bind="addressErrors.length ? 'border-danger' : ''"/>
+                <span repeat.for="errorInfo of addressErrors" class="form-text text-danger">
+                    ${errorInfo.error.message}
+                </span>
+            </div>
+
+            <div class="mb-2" validation-errors.bind="countryOfOriginErrors">
+                <label t="form.country"></label>
+                <input type=text value.bind="countryOfOrigin & validate" class="form-control" class.bind="countryOfOriginErrors.length ? 'border-danger' : ''"/>
+                <span repeat.for="errorInfo of countryOfOriginErrors" class="form-text text-danger">
+                    ${errorInfo.error.message}
+                </span>
+            </div>
+
+            <div class="mb-2" validation-errors.bind="eMailAddressErrors">
+                <label t="form.eMailAddress"></label>
+                <input type="text" value.bind="eMailAddress & validate" class="form-control" class.bind="eMailAddressErrors.length ? 'border-danger' : ''"/>
+                <span repeat.for="errorInfo of eMailAddressErrors" class="form-text text-danger">
+                    ${errorInfo.error.message}
+                </span>
+            </div>
+
+            <div class="mb-2" validation-errors.bind="ageErrors">
+                <label t="form.age"></label>
+                <input type="text" value.bind="age & validate" class="form-control" class.bind="ageErrors.length ? 'border-danger' : ''"/>
+                <span repeat.for="errorInfo of ageErrors" class="form-text text-danger">
+                    ${errorInfo.error.message}
+                </span>
+            </div>
+
+            <div class="form-check form-switch mb-2">
+                <input class="form-check-input" type="checkbox" checked.bind="isHired">
+                <label class="form-check-label" t="form.isHired"></label>
+            </div>
+
+            <div class="d-flex flex-row">
+                <button type="submit" class="btn btn-primary float-right mr-1" disabled.bind="!canSubmit || isSubmitting" t="form.submit"></button>
+                <button class="btn" type="button" disabled.bind="!canReset || isSubmitting" click.trigger="onReset()" t="form.reset">Reset</button>
+            </div>
+        </form>
+    </div>
+</template>
